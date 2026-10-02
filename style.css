@@ -1,0 +1,474 @@
+/* ==========================================================================
+   RESTAURANT AL KOUFIA - MENU DIGITAL OFFICIEL
+   100% RESPONSIVE - MOBILE-FIRST & DESKTOP ULTRA-FLUIDE
+   Inspiré du template professionnel épuré (Flyer & Digital Card)
+   Testé pour toutes résolutions : 320px (iPhone SE) jusqu'à grands écrans
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES & PALETTE
+   -------------------------------------------------------------------------- */
+:root {
+  /* Couleurs de la marque Al Koufia */
+  --primary: #b71c24;        /* Rouge carmin signature */
+  --primary-dark: #8e141a;
+  --secondary: #197b38;      /* Vert d'accent du logo */
+  --secondary-dark: #125727;
+  
+  /* Nuances neutres */
+  --bg-surface: #f4f5f7;     /* Fond extérieur */
+  --bg-sheet: #ffffff;       /* Feuille blanche */
+  --text-dark: #111827;      /* Titres et plats */
+  --text-ar: #4b5563;        /* Nom arabe sous le plat */
+  --text-muted: #6b7280;     /* Textes secondaires */
+  --border-rule: #b71c24;    /* Lignes de séparation header */
+  --border-divider: #e5e7eb; /* Lignes fines entre catégories */
+
+  /* Typographies */
+  --font-display: 'Cinzel', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-ar: 'Cairo', 'Amiri', sans-serif;
+  --font-ar-sub: 'Amiri', 'Traditional Arabic', serif;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & BASE
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-surface);
+  color: var(--text-dark);
+  line-height: 1.5;
+  min-height: 100vh;
+  padding: 12px 8px 50px 8px;
+  overflow-x: hidden;
+}
+
+@media (min-width: 480px) {
+  body {
+    padding: 24px 16px 60px 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 40px 24px 80px 24px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. FEUILLE BLANCHE DU MENU (MENU SHEET)
+   -------------------------------------------------------------------------- */
+.menu-sheet {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  background: var(--bg-sheet);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px -6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.03);
+  padding: 20px 14px 0 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (min-width: 480px) {
+  .menu-sheet {
+    padding: 28px 22px 0 22px;
+    border-radius: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  .menu-sheet {
+    padding: 44px 44px 0 44px;
+    border-radius: 18px;
+    box-shadow: 0 14px 45px -10px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.04);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. EN-TÊTE ÉDITORIAL (TOTALEMENT RESPONSIVE)
+   -------------------------------------------------------------------------- */
+.sheet-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 640px) {
+  .sheet-header {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+/* Partie Gauche : Logo + Infos restaurant */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .header-left {
+    width: auto;
+    gap: 18px;
+  }
+}
+
+.header-logo-circle {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  background: #ffffff;
+  padding: 3px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(183, 28, 36, 0.15);
+}
+
+@media (min-width: 480px) {
+  .header-logo-circle {
+    width: 78px;
+    height: 78px;
+  }
+}
+
+@media (min-width: 640px) {
+  .header-logo-circle {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+.sheet-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+}
+
+.header-brand-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+  flex: 1;
+}
+
+.restaurant-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 4.5vw, 1.6rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--primary);
+  line-height: 1.15;
+  word-break: break-word;
+}
+
+.brand-pill-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-body);
+  font-size: clamp(0.65rem, 2.2vw, 0.72rem);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: var(--secondary);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-top: 2px;
+}
+
+.restaurant-name-ar {
+  font-family: var(--font-ar);
+  font-size: clamp(0.95rem, 3.2vw, 1.1rem);
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-top: 1px;
+}
+
+/* Partie Droite : Grand Mot "MENU" */
+.header-right {
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .header-right {
+    width: auto;
+    text-align: right;
+  }
+}
+
+.menu-word {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 10vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--primary);
+  line-height: 0.95;
+}
+
+/* --------------------------------------------------------------------------
+   5. DOUBLE LIGNE HORIZONTALE DU MODÈLE
+   -------------------------------------------------------------------------- */
+.double-rule {
+  margin-top: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+@media (min-width: 640px) {
+  .double-rule {
+    margin-top: 20px;
+    margin-bottom: 26px;
+  }
+}
+
+.rule-thick {
+  height: 4px;
+  background: var(--border-rule);
+  width: 100%;
+}
+
+.rule-thin {
+  height: 1.5px;
+  background: var(--border-rule);
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   6. SECTIONS DE CATÉGORIES & BANNIÈRES PILULES
+   -------------------------------------------------------------------------- */
+.sheet-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.menu-category-section {
+  border-bottom: 1px solid var(--border-divider);
+  padding-bottom: 18px;
+}
+
+.menu-category-section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 6px;
+}
+
+/* Wrapper Pilule : Responsive sur mobile & desktop */
+.category-pill-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 14px;
+}
+
+@media (min-width: 680px) {
+  .category-pill-wrapper {
+    justify-content: flex-end; /* Aligné à droite comme sur le modèle original */
+  }
+}
+
+.category-pill-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px 8px;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(183, 28, 36, 0.2);
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 480px) {
+  .category-pill-header {
+    padding: 6px 20px;
+  }
+}
+
+.pill-title-fr {
+  font-family: var(--font-body);
+  font-size: clamp(0.78rem, 2.5vw, 0.88rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pill-sep {
+  opacity: 0.65;
+  font-size: 0.75rem;
+}
+
+.pill-title-ar {
+  font-family: var(--font-ar);
+  font-size: clamp(0.95rem, 3vw, 1.05rem);
+  font-weight: 700;
+}
+
+.category-pill-header--special {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}
+
+/* --------------------------------------------------------------------------
+   7. GRILLE RESPONSIVE DES PLATS (1 COL SUR MOBILE, 2 COL SUR DESKTOP)
+   -------------------------------------------------------------------------- */
+.category-items-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px 28px;
+}
+
+@media (min-width: 680px) {
+  .category-items-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 36px;
+  }
+}
+
+/* Ligne de chaque plat */
+.menu-item-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background-color 0.18s ease;
+}
+
+.menu-item-row:hover {
+  background-color: #f9f9fb;
+}
+
+/* Ligne principale : Nom français à gauche, Prix à droite */
+.item-main-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.item-name-fr {
+  font-size: clamp(0.95rem, 2.8vw, 1.02rem);
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+/* Prix en grand format à droite */
+.item-price {
+  font-family: var(--font-body);
+  font-size: clamp(1.08rem, 3.2vw, 1.16rem);
+  font-weight: 800;
+  color: var(--primary);
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  flex-shrink: 0;
+}
+
+/* Sous-ligne : Nom arabe sous le plat (comme la description du modèle) */
+.item-sub-line {
+  font-family: var(--font-ar-sub);
+  font-size: clamp(1.05rem, 3.2vw, 1.14rem);
+  font-weight: 700;
+  color: var(--text-ar);
+  direction: rtl;
+  unicode-bidi: isolate;
+  line-height: 1.25;
+}
+
+.menu-item-row:hover .item-sub-line {
+  color: var(--primary);
+}
+
+/* --------------------------------------------------------------------------
+   8. PIED DE PAGE RESPONSIVE
+   -------------------------------------------------------------------------- */
+.sheet-footer {
+  margin-top: 30px;
+  margin-left: -14px;
+  margin-right: -14px;
+}
+
+@media (min-width: 480px) {
+  .sheet-footer {
+    margin-top: 34px;
+    margin-left: -22px;
+    margin-right: -22px;
+  }
+}
+
+@media (min-width: 768px) {
+  .sheet-footer {
+    margin-top: 40px;
+    margin-left: -44px;
+    margin-right: -44px;
+  }
+}
+
+.footer-info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-top: 1px solid var(--border-divider);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .footer-info-row {
+    flex-direction: row;
+    padding: 16px 28px;
+    text-align: left;
+  }
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.05em;
+}
+
+.footer-brand-ar {
+  font-family: var(--font-ar);
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+
+.footer-sub {
+  font-size: 0.78rem;
+}
+
+.footer-accent-bar {
+  height: 8px;
+  background: var(--primary);
+  width: 100%;
+}
