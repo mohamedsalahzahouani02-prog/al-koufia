@@ -1,43 +1,62 @@
 /* ==========================================================================
-   RESTAURANT AL KOUFIA - MENU DIGITAL OFFICIEL
-   100% RESPONSIVE - MOBILE-FIRST & DESKTOP ULTRA-FLUIDE
-   Inspiré du template professionnel épuré (Flyer & Digital Card)
-   Testé pour toutes résolutions : 320px (iPhone SE) jusqu'à grands écrans
+   RESTAURANT AL KOUFIA - MENU LIVRE DE RESTAURANT OUVERT (FOND CLAIR BEIGE)
+   Format optimisé & responsive : taille du livre adaptée mobile & desktop
+   - Couverture compacte & élégante visible immédiatement sur smartphone
+   - Livre ouvert avec pages beige parchemin chaleureuses
+   - 100% prêt pour déploiement Vercel
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. VARIABLES & PALETTE
+   1. VARIABLES & PALETTE (FOND CLAIR BEIGE & OR)
    -------------------------------------------------------------------------- */
 :root {
-  /* Couleurs de la marque Al Koufia */
-  --primary: #b71c24;        /* Rouge carmin signature */
-  --primary-dark: #8e141a;
-  --secondary: #197b38;      /* Vert d'accent du logo */
-  --secondary-dark: #125727;
-  
-  /* Nuances neutres */
-  --bg-surface: #f4f5f7;     /* Fond extérieur */
-  --bg-sheet: #ffffff;       /* Feuille blanche */
-  --text-dark: #111827;      /* Titres et plats */
-  --text-ar: #4b5563;        /* Nom arabe sous le plat */
-  --text-muted: #6b7280;     /* Textes secondaires */
-  --border-rule: #b71c24;    /* Lignes de séparation header */
-  --border-divider: #e5e7eb; /* Lignes fines entre catégories */
+  /* Fond extérieur de la table (clair, chaud et lumineux) */
+  --table-bg: #ece8df;
+  --table-bg-glow: #f6f3eb;
 
-  /* Typographies */
-  --font-display: 'Cinzel', Georgia, serif;
+  /* Fond des pages intérieures du livre (Clair Beige Parchemin) */
+  --book-page-beige: #faf7f0;
+  --book-page-beige-dark: #f2ece0;
+  --book-page-border: rgba(183, 28, 36, 0.16);
+  --book-gold-line: #c59b27;
+  --book-gold-subtle: rgba(197, 155, 39, 0.35);
+
+  /* Couverture du livre fermé */
+  --cover-bg: #1c1d22;
+  --cover-gold: #cfa851;
+  --cover-gold-light: #f7e2a3;
+
+  /* Marque Restaurant Al Koufia */
+  --brand-red: #b71c24;
+  --brand-red-dark: #8e141a;
+  --brand-green: #15803d;
+  --brand-green-light: #edf7f0;
+
+  /* Typographie */
+  --text-primary: #181c24;
+  --text-secondary: #525c6a;
+  --text-muted: #7b8696;
+  --text-arabic: #b71c24;
+
+  /* Polices */
+  --font-serif: 'Cinzel', Georgia, serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-ar: 'Cairo', 'Amiri', sans-serif;
   --font-ar-sub: 'Amiri', 'Traditional Arabic', serif;
+
+  /* Ombres réalistes du livre */
+  --shadow-book-closed: 0 16px 40px -8px rgba(40, 30, 20, 0.22), 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-book-opened: 0 20px 50px -10px rgba(40, 30, 20, 0.2), 0 3px 12px rgba(0, 0, 0, 0.05);
 }
 
 /* --------------------------------------------------------------------------
-   2. RESET & BASE
+   2. RESET & BASE (FOND LUMINEUX SANS RAYURES)
    -------------------------------------------------------------------------- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -48,115 +67,164 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--bg-surface);
-  color: var(--text-dark);
-  line-height: 1.5;
+  background-color: var(--table-bg);
+  background-image: radial-gradient(circle at 50% 30%, var(--table-bg-glow) 0%, var(--table-bg) 85%);
+  color: var(--text-primary);
   min-height: 100vh;
-  padding: 12px 8px 50px 8px;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   3. SCÈNE DU LIVRE (RESPONSIVE)
+   -------------------------------------------------------------------------- */
+.book-scene {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 10px 40px 10px;
 }
 
 @media (min-width: 480px) {
-  body {
+  .book-scene {
     padding: 24px 16px 60px 16px;
   }
 }
 
 @media (min-width: 768px) {
-  body {
-    padding: 40px 24px 80px 24px;
+  .book-scene {
+    padding: 36px 24px 70px 24px;
   }
 }
 
 /* --------------------------------------------------------------------------
-   3. FEUILLE BLANCHE DU MENU (MENU SHEET)
+   4. LIVRE FERMÉ (TAILLE MINIMISÉE & OPTIMISÉE POUR SMARTPHONE)
    -------------------------------------------------------------------------- */
-.menu-sheet {
-  max-width: 960px;
+.book-closed-container {
   width: 100%;
-  margin: 0 auto;
-  background: var(--bg-sheet);
-  border-radius: 12px;
-  box-shadow: 0 8px 30px -6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.03);
-  padding: 20px 14px 0 14px;
-  overflow: hidden;
+  max-width: 360px;
+  cursor: pointer;
   position: relative;
+  user-select: none;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  margin: 0 auto;
 }
 
 @media (min-width: 480px) {
-  .menu-sheet {
-    padding: 28px 22px 0 22px;
-    border-radius: 14px;
+  .book-closed-container {
+    max-width: 390px;
   }
 }
 
 @media (min-width: 768px) {
-  .menu-sheet {
-    padding: 44px 44px 0 44px;
-    border-radius: 18px;
-    box-shadow: 0 14px 45px -10px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.04);
+  .book-closed-container {
+    max-width: 410px;
   }
 }
 
-/* --------------------------------------------------------------------------
-   4. EN-TÊTE ÉDITORIAL (TOTALEMENT RESPONSIVE)
-   -------------------------------------------------------------------------- */
-.sheet-header {
+.book-closed-container:hover {
+  transform: translateY(-5px) scale(1.012);
+}
+
+.book-cover {
+  width: 100%;
+  height: auto;
+  min-height: 520px;
+  background: linear-gradient(135deg, #1f2026 0%, #131417 100%);
+  border-radius: 8px 18px 18px 8px;
+  box-shadow: var(--shadow-book-closed);
+  position: relative;
+  padding: 22px 18px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
   align-items: center;
   justify-content: space-between;
-}
-
-@media (min-width: 640px) {
-  .sheet-header {
-    flex-direction: row;
-    align-items: flex-end;
-  }
-}
-
-/* Partie Gauche : Logo + Infos restaurant */
-.header-left {
-  display: flex;
-  align-items: center;
+  border-left: 10px solid #0d0e10;
+  overflow: hidden;
   gap: 14px;
-  width: 100%;
-}
-
-@media (min-width: 640px) {
-  .header-left {
-    width: auto;
-    gap: 18px;
-  }
-}
-
-.header-logo-circle {
-  width: 68px;
-  height: 68px;
-  border-radius: 50%;
-  border: 3px solid var(--primary);
-  background: #ffffff;
-  padding: 3px;
-  flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(183, 28, 36, 0.15);
 }
 
 @media (min-width: 480px) {
-  .header-logo-circle {
-    width: 78px;
-    height: 78px;
+  .book-cover {
+    min-height: 570px;
+    padding: 26px 22px;
+    border-left-width: 12px;
   }
 }
 
-@media (min-width: 640px) {
-  .header-logo-circle {
-    width: 90px;
-    height: 90px;
+@media (min-width: 768px) {
+  .book-cover {
+    min-height: 610px;
+    padding: 30px 26px;
+    border-left-width: 14px;
   }
 }
 
-.sheet-logo {
+/* Cadres dorés sur la couverture */
+.cover-border-outer {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  border: 2px solid var(--cover-gold);
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+.cover-border-inner {
+  position: absolute;
+  top: 17px;
+  left: 17px;
+  right: 17px;
+  bottom: 17px;
+  border: 1px solid rgba(207, 168, 81, 0.45);
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+/* Coins en filigrane */
+.cover-corner {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  color: var(--cover-gold);
+}
+.c-tl { top: 8px; left: 8px; }
+.c-tr { top: 8px; right: 8px; transform: scaleX(-1); }
+.c-bl { bottom: 8px; left: 8px; transform: scaleY(-1); }
+.c-br { bottom: 8px; right: 8px; transform: scale(-1); }
+
+/* Logo et Titre sur la couverture */
+.cover-header-brand {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cover-logo-ring {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: 2px solid var(--cover-gold);
+  padding: 3px;
+  background: #ffffff;
+  box-shadow: 0 0 18px rgba(207, 168, 81, 0.28);
+  margin-bottom: 10px;
+}
+
+@media (min-width: 480px) {
+  .cover-logo-ring {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.cover-logo-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -164,311 +232,414 @@ body {
   display: block;
 }
 
-.header-brand-info {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  min-width: 0;
-  flex: 1;
-}
-
-.restaurant-name {
-  font-family: var(--font-display);
-  font-size: clamp(1.1rem, 4.5vw, 1.6rem);
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  color: var(--primary);
-  line-height: 1.15;
-  word-break: break-word;
-}
-
-.brand-pill-badge {
-  display: inline-block;
-  align-self: flex-start;
-  font-family: var(--font-body);
-  font-size: clamp(0.65rem, 2.2vw, 0.72rem);
+.cover-title-fr {
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 3.8vw, 1.25rem);
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #ffffff;
-  background: var(--secondary);
-  padding: 3px 10px;
-  border-radius: 999px;
-  margin-top: 2px;
+  color: var(--cover-gold-light);
+  margin-bottom: 2px;
 }
 
-.restaurant-name-ar {
+.cover-title-ar {
   font-family: var(--font-ar);
-  font-size: clamp(0.95rem, 3.2vw, 1.1rem);
+  font-size: clamp(1.2rem, 4.2vw, 1.38rem);
   font-weight: 700;
-  color: var(--text-dark);
-  margin-top: 1px;
+  color: var(--brand-red);
 }
 
-/* Partie Droite : Grand Mot "MENU" */
-.header-right {
-  width: 100%;
+/* Mot MENU central */
+.cover-menu-box {
+  margin: 12px 0;
   text-align: center;
+  position: relative;
+  padding: 10px 28px;
 }
 
-@media (min-width: 640px) {
-  .header-right {
-    width: auto;
-    text-align: right;
-  }
+.bracket-corner-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border-top: 2px solid var(--cover-gold);
+  border-left: 2px solid var(--cover-gold);
 }
 
-.menu-word {
-  font-family: var(--font-display);
-  font-size: clamp(2.4rem, 10vw, 3.8rem);
+.bracket-corner-br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 18px;
+  height: 18px;
+  border-bottom: 2px solid var(--cover-gold);
+  border-right: 2px solid var(--cover-gold);
+}
+
+.cover-menu-text {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 8.5vw, 3.2rem);
   font-weight: 800;
-  letter-spacing: 0.06em;
-  color: var(--primary);
-  line-height: 0.95;
+  letter-spacing: 0.14em;
+  color: #ffffff;
+  line-height: 1;
 }
 
-/* --------------------------------------------------------------------------
-   5. DOUBLE LIGNE HORIZONTALE DU MODÈLE
-   -------------------------------------------------------------------------- */
-.double-rule {
-  margin-top: 16px;
-  margin-bottom: 20px;
+/* Bouton pour ouvrir le livre */
+.cover-open-action {
+  margin-bottom: 12px;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  align-items: center;
+  gap: 6px;
 }
 
-@media (min-width: 640px) {
-  .double-rule {
-    margin-top: 20px;
-    margin-bottom: 26px;
-  }
-}
-
-.rule-thick {
-  height: 4px;
-  background: var(--border-rule);
-  width: 100%;
-}
-
-.rule-thin {
-  height: 1.5px;
-  background: var(--border-rule);
-  width: 100%;
-}
-
-/* --------------------------------------------------------------------------
-   6. SECTIONS DE CATÉGORIES & BANNIÈRES PILULES
-   -------------------------------------------------------------------------- */
-.sheet-content {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.menu-category-section {
-  border-bottom: 1px solid var(--border-divider);
-  padding-bottom: 18px;
-}
-
-.menu-category-section:last-of-type {
-  border-bottom: none;
-  padding-bottom: 6px;
-}
-
-/* Wrapper Pilule : Responsive sur mobile & desktop */
-.category-pill-wrapper {
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: 14px;
-}
-
-@media (min-width: 680px) {
-  .category-pill-wrapper {
-    justify-content: flex-end; /* Aligné à droite comme sur le modèle original */
-  }
-}
-
-.category-pill-header {
+.btn-open-book {
   display: inline-flex;
   align-items: center;
-  gap: 6px 8px;
-  background: var(--primary);
-  color: #ffffff;
-  padding: 6px 16px;
+  gap: 8px;
+  font-family: var(--font-serif);
+  font-size: clamp(0.76rem, 2.5vw, 0.84rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #111827;
+  background: linear-gradient(135deg, var(--cover-gold-light) 0%, var(--cover-gold) 100%);
+  padding: 10px 22px;
   border-radius: 999px;
-  box-shadow: 0 2px 6px rgba(183, 28, 36, 0.2);
-  max-width: 100%;
-  flex-wrap: wrap;
+  box-shadow: 0 4px 16px rgba(207, 168, 81, 0.4);
+  border: none;
+  cursor: pointer;
+  animation: pulseGold 2.2s infinite ease-in-out;
 }
 
-@media (min-width: 480px) {
-  .category-pill-header {
-    padding: 6px 20px;
-  }
+@keyframes pulseGold {
+  0%, 100% { transform: scale(1); box-shadow: 0 4px 16px rgba(207, 168, 81, 0.4); }
+  50% { transform: scale(1.03); box-shadow: 0 6px 22px rgba(207, 168, 81, 0.65); }
 }
 
-.pill-title-fr {
-  font-family: var(--font-body);
-  font-size: clamp(0.78rem, 2.5vw, 0.88rem);
-  font-weight: 800;
-  letter-spacing: 0.08em;
+.cover-tagline-text {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: rgba(207, 168, 81, 0.85);
   text-transform: uppercase;
 }
 
-.pill-sep {
-  opacity: 0.65;
-  font-size: 0.75rem;
-}
-
-.pill-title-ar {
-  font-family: var(--font-ar);
-  font-size: clamp(0.95rem, 3vw, 1.05rem);
-  font-weight: 700;
-}
-
-.category-pill-header--special {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-}
-
 /* --------------------------------------------------------------------------
-   7. GRILLE RESPONSIVE DES PLATS (1 COL SUR MOBILE, 2 COL SUR DESKTOP)
+   5. LIVRE OUVERT (FOND CLAIR BEIGE & ULTRA-RESPONSIVE)
    -------------------------------------------------------------------------- */
-.category-items-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px 28px;
+.book-opened-container {
+  display: none;
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
-@media (min-width: 680px) {
-  .category-items-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px 36px;
+body.is-book-open .book-closed-container {
+  display: none;
+}
+
+body.is-book-open .book-opened-container {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Barre supérieure d'outils */
+.book-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 0 4px;
+}
+
+.btn-close-book {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  color: var(--brand-red);
+  border: 1px solid var(--book-page-border);
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.btn-close-book:hover {
+  background: var(--brand-red);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(183, 28, 36, 0.25);
+}
+
+.book-status-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* LE LIVRE OUVERT (DOUBLE PAGE SUR DESKTOP, PAGE FLUIDE SUR MOBILE) */
+.open-book-spread {
+  background: var(--book-page-beige);
+  border-radius: 10px;
+  box-shadow: var(--shadow-book-opened);
+  border: 1px solid rgba(197, 155, 39, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 860px) {
+  .open-book-spread {
+    border-radius: 16px;
+    display: flex;
+  }
+  /* Pli central réaliste du livre */
+  .open-book-spread::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 32px;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, 
+      transparent 0%, 
+      rgba(40, 30, 20, 0.02) 25%, 
+      rgba(40, 30, 20, 0.10) 50%, 
+      rgba(40, 30, 20, 0.02) 75%, 
+      transparent 100%
+    );
+    pointer-events: none;
+    z-index: 10;
   }
 }
 
-/* Ligne de chaque plat */
-.menu-item-row {
+/* Pages Gauche et Droite */
+.book-page {
+  flex: 1;
+  padding: 20px 14px;
+  position: relative;
+}
+
+@media (min-width: 480px) {
+  .book-page {
+    padding: 24px 20px;
+  }
+}
+
+@media (min-width: 860px) {
+  .book-page-left {
+    padding: 30px 28px 34px 28px;
+    border-right: 1px solid rgba(197, 155, 39, 0.2);
+  }
+  .book-page-right {
+    padding: 30px 28px 34px 28px;
+  }
+}
+
+/* Cadre doré fin sur chaque page */
+.page-inner-border {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1px solid var(--book-gold-subtle);
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+/* En-tête intérieur */
+.open-book-header {
+  text-align: center;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--brand-red);
+  position: relative;
+}
+
+.open-header-logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.open-logo-circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 2px solid var(--brand-red);
+  background: #ffffff;
+  padding: 2px;
+  box-shadow: 0 3px 10px rgba(183, 28, 36, 0.12);
+}
+
+.open-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+}
+
+.open-header-titles {
+  text-align: left;
+}
+
+.open-res-name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 3.8vw, 1.4rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--brand-red);
+  line-height: 1.15;
+}
+
+.open-res-ar {
+  font-family: var(--font-ar);
+  font-size: clamp(1rem, 3.2vw, 1.18rem);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.open-header-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-red-dark);
+  background: rgba(183, 28, 36, 0.06);
+  padding: 2px 12px;
+  border-radius: 999px;
+  margin-top: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   6. SECTIONS DES CATÉGORIES DANS LE LIVRE
+   -------------------------------------------------------------------------- */
+.page-categories {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  padding: 4px 6px;
-  border-radius: 6px;
-  transition: background-color 0.18s ease;
+  gap: 18px;
 }
 
-.menu-item-row:hover {
-  background-color: #f9f9fb;
+.menu-cat-block {
+  border-bottom: 1px dashed rgba(197, 155, 39, 0.3);
+  padding-bottom: 14px;
 }
 
-/* Ligne principale : Nom français à gauche, Prix à droite */
-.item-main-line {
+.menu-cat-block:last-child {
+  border-bottom: none;
+  padding-bottom: 2px;
+}
+
+/* En-tête de catégorie */
+.cat-book-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, rgba(183, 28, 36, 0.08) 0%, transparent 100%);
+  padding: 5px 10px;
+  border-left: 3px solid var(--brand-red);
+  border-radius: 0 6px 6px 0;
+}
+
+.cat-book-title-fr {
+  font-family: var(--font-serif);
+  font-size: clamp(0.92rem, 2.6vw, 1.02rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--brand-red);
+}
+
+.cat-book-title-ar {
+  font-family: var(--font-ar);
+  font-size: clamp(1rem, 2.8vw, 1.1rem);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Liste des plats */
+.cat-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dish-row-book {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 3px 4px;
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
+}
+
+.dish-row-book:hover {
+  background-color: rgba(255, 255, 255, 0.65);
+}
+
+.dish-top-line {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  gap: 10px;
+  gap: 8px;
 }
 
-.item-name-fr {
-  font-size: clamp(0.95rem, 2.8vw, 1.02rem);
+.dish-name-fr {
+  font-size: clamp(0.92rem, 2.7vw, 1rem);
   font-weight: 700;
-  color: var(--text-dark);
-  letter-spacing: -0.01em;
+  color: var(--text-primary);
   line-height: 1.3;
 }
 
-/* Prix en grand format à droite */
-.item-price {
+.dish-price-dt {
   font-family: var(--font-body);
-  font-size: clamp(1.08rem, 3.2vw, 1.16rem);
+  font-size: clamp(1.02rem, 3vw, 1.12rem);
   font-weight: 800;
-  color: var(--primary);
+  color: var(--brand-red);
   white-space: nowrap;
   letter-spacing: 0.01em;
   flex-shrink: 0;
 }
 
-/* Sous-ligne : Nom arabe sous le plat (comme la description du modèle) */
-.item-sub-line {
+.dish-sub-ar {
   font-family: var(--font-ar-sub);
-  font-size: clamp(1.05rem, 3.2vw, 1.14rem);
+  font-size: clamp(1rem, 3vw, 1.1rem);
   font-weight: 700;
-  color: var(--text-ar);
+  color: var(--text-secondary);
   direction: rtl;
   unicode-bidi: isolate;
   line-height: 1.25;
 }
 
-.menu-item-row:hover .item-sub-line {
-  color: var(--primary);
+.dish-row-book:hover .dish-sub-ar {
+  color: var(--brand-red);
 }
 
-/* --------------------------------------------------------------------------
-   8. PIED DE PAGE RESPONSIVE
-   -------------------------------------------------------------------------- */
-.sheet-footer {
-  margin-top: 30px;
-  margin-left: -14px;
-  margin-right: -14px;
-}
-
-@media (min-width: 480px) {
-  .sheet-footer {
-    margin-top: 34px;
-    margin-left: -22px;
-    margin-right: -22px;
-  }
-}
-
-@media (min-width: 768px) {
-  .sheet-footer {
-    margin-top: 40px;
-    margin-left: -44px;
-    margin-right: -44px;
-  }
-}
-
-.footer-info-row {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 18px;
-  border-top: 1px solid var(--border-divider);
-  font-size: 0.82rem;
-  color: var(--text-muted);
+/* Pied de page du livre ouvert */
+.open-book-footer {
   text-align: center;
-}
-
-@media (min-width: 640px) {
-  .footer-info-row {
-    flex-direction: row;
-    padding: 16px 28px;
-    text-align: left;
-  }
-}
-
-.footer-brand {
-  font-family: var(--font-display);
-  font-weight: 700;
-  color: var(--primary);
-  letter-spacing: 0.05em;
-}
-
-.footer-brand-ar {
-  font-family: var(--font-ar);
-  font-weight: 700;
-  color: var(--text-dark);
-  font-size: 0.95rem;
-}
-
-.footer-sub {
+  padding-top: 16px;
+  margin-top: 14px;
+  border-top: 1px solid rgba(197, 155, 39, 0.3);
   font-size: 0.78rem;
-}
-
-.footer-accent-bar {
-  height: 8px;
-  background: var(--primary);
-  width: 100%;
+  color: var(--text-muted);
 }

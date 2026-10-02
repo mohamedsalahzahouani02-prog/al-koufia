@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu - Restaurant Al Koufia | مطعم الكوفية</title>
   <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
   
   <!-- Polices Google Fonts : Cinzel, Plus Jakarta Sans, Cairo & Amiri -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,667 +14,739 @@
   
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="is-book-closed">
 
-  <!-- Feuille du Menu (Menu Sheet) -->
-  <div class="menu-sheet">
+  <div class="book-scene">
 
-    <!-- En-tête style Éditorial du Modèle -->
-    <header class="sheet-header">
-      <div class="header-left">
-        <div class="header-logo-circle">
-          <img src="logo.png" alt="Logo Restaurant Al Koufia" class="sheet-logo">
+    <!-- ============================================== -->
+    <!-- 1. LE LIVRE FERMÉ (COUVERTURE ÉLÉGANTE DU RESTAURANT) -->
+    <!-- ============================================== -->
+    <div class="book-closed-container" id="bookClosedContainer" role="button" tabindex="0" aria-label="Ouvrir le menu Restaurant Al Koufia">
+      
+      <div class="book-cover">
+        <!-- Cadres dorés -->
+        <div class="cover-border-outer"></div>
+        <div class="cover-border-inner"></div>
+
+        <!-- 4 Coins en filigrane or -->
+        <div class="cover-corner c-tl"><svg class="cover-corner" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M2 30V10C2 5.58 5.58 2 10 2H30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M6 30V12C6 8.68 8.68 6 12 6H30" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+  <circle cx="10" cy="10" r="2.5" fill="currentColor"/>
+</svg></div>
+        <div class="cover-corner c-tr"><svg class="cover-corner" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M2 30V10C2 5.58 5.58 2 10 2H30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M6 30V12C6 8.68 8.68 6 12 6H30" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+  <circle cx="10" cy="10" r="2.5" fill="currentColor"/>
+</svg></div>
+        <div class="cover-corner c-bl"><svg class="cover-corner" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M2 30V10C2 5.58 5.58 2 10 2H30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M6 30V12C6 8.68 8.68 6 12 6H30" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+  <circle cx="10" cy="10" r="2.5" fill="currentColor"/>
+</svg></div>
+        <div class="cover-corner c-br"><svg class="cover-corner" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M2 30V10C2 5.58 5.58 2 10 2H30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M6 30V12C6 8.68 8.68 6 12 6H30" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+  <circle cx="10" cy="10" r="2.5" fill="currentColor"/>
+</svg></div>
+
+        <!-- Médaillon du Logo officiel -->
+        <div class="cover-header-brand">
+          <div class="cover-logo-ring">
+            <img src="logo.png" alt="Logo Restaurant Al Koufia" class="cover-logo-img">
+          </div>
+          <h1 class="cover-title-fr">RESTAURANT AL KOUFIA</h1>
+          <div class="cover-title-ar" lang="ar" dir="rtl">مطعم الكوفية</div>
         </div>
-        <div class="header-brand-info">
-          <h1 class="restaurant-name">RESTAURANT AL KOUFIA</h1>
-          <div class="brand-pill-badge">SPÉCIALITÉS TUNISIENNES</div>
-          <div class="restaurant-name-ar" lang="ar" dir="rtl">مطعم الكوفية</div>
+
+        <!-- Mot MENU majestueux avec coins dorés -->
+        <div class="cover-menu-box">
+          <span class="bracket-corner-tl"></span>
+          <span class="bracket-corner-br"></span>
+          <div class="cover-menu-text">MENU</div>
+        </div>
+
+        <!-- Bouton interactif pour ouvrir le livre -->
+        <div class="cover-open-action">
+          <button type="button" class="btn-open-book">
+            <span>📖 Ouvrir le Menu</span>
+            <span lang="ar" dir="rtl">• افتح القائمة</span>
+          </button>
+          <div class="cover-tagline-text">Spécialités Tunisiennes & Saveurs Orientales</div>
         </div>
       </div>
 
-      <div class="header-right">
-        <div class="menu-word">MENU</div>
-      </div>
-    </header>
-
-    <!-- Double Ligne Horizontale Épaisse + Fine -->
-    <div class="double-rule" aria-hidden="true">
-      <div class="rule-thick"></div>
-      <div class="rule-thin"></div>
     </div>
 
-    <!-- Contenu Principal des Catégories -->
-    <main class="sheet-content">
-
-      <!-- Section : Entrées froides -->
-      <section class="menu-category-section">
-        <div class="category-pill-wrapper">
-          <div class="category-pill-header">
-            <span class="pill-title-fr">Entrées froides</span>
-            <span class="pill-sep">•</span>
-            <span class="pill-title-ar" lang="ar" dir="rtl">المقبلات الباردة</span>
-          </div>
-        </div>
-
-        <div class="category-items-grid">
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Sauce à l'ail</span>
-              <span class="item-price">4.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(ثومية)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Houmous</span>
-              <span class="item-price">5.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(حمص)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Salade Fatouch</span>
-              <span class="item-price">5.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(سلطة فتوش)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Salade Kol slou</span>
-              <span class="item-price">5.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(سلطة كول سلو)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Moutabal d'aubergine</span>
-              <span class="item-price">6.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(متبل باذنجان)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Baba Ghanouj</span>
-              <span class="item-price">6.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(بابا غنوج)</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section : Entrées chaudes -->
-      <section class="menu-category-section">
-        <div class="category-pill-wrapper">
-          <div class="category-pill-header">
-            <span class="pill-title-fr">Entrées chaudes</span>
-            <span class="pill-sep">•</span>
-            <span class="pill-title-ar" lang="ar" dir="rtl">المقبلات الساخنة</span>
-          </div>
-        </div>
-
-        <div class="category-items-grid">
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Falafel</span>
-              <span class="item-price">1.500 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(فلافل)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Sambousek au fromage</span>
-              <span class="item-price">2.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(سمبوسك جبنة)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Sambousek au bœuf</span>
-              <span class="item-price">3.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(سمبوسك لحمة)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Soupe de lentilles</span>
-              <span class="item-price">4.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(شوربة عدس)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Kebbe</span>
-              <span class="item-price">4.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(كبة)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Arayes au fromage</span>
-              <span class="item-price">8.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(عرايس جبنة)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Arayes au bœuf</span>
-              <span class="item-price">10.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(عرايس لحمة)</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section : Sandwich -->
-      <section class="menu-category-section">
-        <div class="category-pill-wrapper">
-          <div class="category-pill-header">
-            <span class="pill-title-fr">Sandwich</span>
-            <span class="pill-sep">•</span>
-            <span class="pill-title-ar" lang="ar" dir="rtl">سندويش</span>
-          </div>
-        </div>
-
-        <div class="category-items-grid">
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Omlette</span>
-              <span class="item-price">4.500 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(أملات)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Falafel</span>
-              <span class="item-price">5.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(فلافل)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Omlette peperoni</span>
-              <span class="item-price">5.500 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(أملات باباروني)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Omlette jambon</span>
-              <span class="item-price">6.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(أملات جمبون)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Omlette Thon</span>
-              <span class="item-price">6.500 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(أملات تن)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Merguez</span>
-              <span class="item-price">7.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(مرقاز)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Chawarma</span>
-              <span class="item-price">9.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(شاورما)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Kabeb poulet</span>
-              <span class="item-price">9.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(كباب دجاج)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Crespy</span>
-              <span class="item-price">9.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(كرسبي)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Chich Taouk</span>
-              <span class="item-price">9.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(شيش طاووق)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Viande hachée</span>
-              <span class="item-price">11.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(كباب لحم)</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section : Makloub -->
-      <section class="menu-category-section">
-        <div class="category-pill-wrapper">
-          <div class="category-pill-header">
-            <span class="pill-title-fr">Makloub</span>
-            <span class="pill-sep">•</span>
-            <span class="pill-title-ar" lang="ar" dir="rtl">مقلوب</span>
-          </div>
-        </div>
-
-        <div class="category-items-grid">
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Thon</span>
-              <span class="item-price">10.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(تن)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Poulet grillé</span>
-              <span class="item-price">12.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(دجاج مشوي)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Poulet pané</span>
-              <span class="item-price">12.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(دجاج مبطن)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Crespy</span>
-              <span class="item-price">12.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(كرسبي)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Viande hachée</span>
-              <span class="item-price">13.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(لحم مفروم)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Kebda</span>
-              <span class="item-price">15.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(كبدة)</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section : Baguette farcie -->
-      <section class="menu-category-section">
-        <div class="category-pill-wrapper">
-          <div class="category-pill-header">
-            <span class="pill-title-fr">Baguette farcie</span>
-            <span class="pill-sep">•</span>
-            <span class="pill-title-ar" lang="ar" dir="rtl">باقات فارسي</span>
-          </div>
-        </div>
-
-        <div class="category-items-grid">
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Thon</span>
-              <span class="item-price">10.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(تن)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Poulet grillé</span>
-              <span class="item-price">12.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(دجاج مشوي)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Poulet pané</span>
-              <span class="item-price">12.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(دجاج مبطن)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Viande hachée</span>
-              <span class="item-price">13.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(لحم مفروم)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Kebda</span>
-              <span class="item-price">15.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(كبدة)</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section : Tacos -->
-      <section class="menu-category-section">
-        <div class="category-pill-wrapper">
-          <div class="category-pill-header">
-            <span class="pill-title-fr">Tacos</span>
-            <span class="pill-sep">•</span>
-            <span class="pill-title-ar" lang="ar" dir="rtl">تاكوس</span>
-          </div>
-        </div>
-
-        <div class="category-items-grid">
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Thon</span>
-              <span class="item-price">8.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(تن)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Poulet grillé</span>
-              <span class="item-price">9.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(دجاج مشوي)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Poulet pané</span>
-              <span class="item-price">9.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(دجاج مبطن)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Crespy</span>
-              <span class="item-price">10.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(كرسبي)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Viande hachée</span>
-              <span class="item-price">10.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(لحم مفروم)</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section : Burger -->
-      <section class="menu-category-section">
-        <div class="category-pill-wrapper">
-          <div class="category-pill-header">
-            <span class="pill-title-fr">Burger</span>
-            <span class="pill-sep">•</span>
-            <span class="pill-title-ar" lang="ar" dir="rtl">برجر</span>
-          </div>
-        </div>
-
-        <div class="category-items-grid">
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Crespy</span>
-              <span class="item-price">10.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(كرسبي)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Double Crespy</span>
-              <span class="item-price">12.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(دوبل كرسبي)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Classique Bœuf</span>
-              <span class="item-price">14.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(لحم مفروم)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Double bœuf</span>
-              <span class="item-price">16.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(دوبل لحم)</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section : Karmacha Al Koufia -->
-      <section class="menu-category-section">
-        <div class="category-pill-wrapper">
-          <div class="category-pill-header category-pill-header--special">
-            <span class="pill-title-fr">Karmacha Al Koufia</span>
-            <span class="pill-sep">•</span>
-            <span class="pill-title-ar" lang="ar" dir="rtl">مقرمشات الكوفية</span>
-          </div>
-        </div>
-
-        <div class="category-items-grid">
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Crispy 8 pièces</span>
-              <span class="item-price">16.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(كرسبي 8 قطع)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Crispy 13 pièces</span>
-              <span class="item-price">25.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(كرسبي 13 قطعة)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Crispy 20 pièces</span>
-              <span class="item-price">35.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(كرسبي 20 قطعة)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Mixte Karmacha Al Koufia</span>
-              <span class="item-price">45.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(تشكيلة المقرمشات الكوفية)</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section : Nos plats -->
-      <section class="menu-category-section">
-        <div class="category-pill-wrapper">
-          <div class="category-pill-header">
-            <span class="pill-title-fr">Nos plats</span>
-            <span class="pill-sep">•</span>
-            <span class="pill-title-ar" lang="ar" dir="rtl">أطباقنا</span>
-          </div>
-        </div>
-
-        <div class="category-items-grid">
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Falafel</span>
-              <span class="item-price">14.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(فلافل)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Fahita</span>
-              <span class="item-price">17.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(فاهيتا)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Kebda</span>
-              <span class="item-price">17.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(كبدة)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Cordon Bleu</span>
-              <span class="item-price">18.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(كوردون بلو)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Poulet grillé</span>
-              <span class="item-price">18.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(دجاج مشوي)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Poulet pané</span>
-              <span class="item-price">18.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(دجاج مبطن)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Chawarma</span>
-              <span class="item-price">20.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(شاورما)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Crespy</span>
-              <span class="item-price">20.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(كرسبي)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Chich Taouk</span>
-              <span class="item-price">20.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(شيش طاووق)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Msahab</span>
-              <span class="item-price">22.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(مسحب)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Kabeb poulet</span>
-              <span class="item-price">23.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(كباب دجاج)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Kabeb Boeuf</span>
-              <span class="item-price">28.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(كباب لحم)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Maajoukat poulet</span>
-              <span class="item-price">26.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(معجوقة دجاج)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Maajoukat boeuf</span>
-              <span class="item-price">30.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(معجوقة لحم)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Demi poulet</span>
-              <span class="item-price">23.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(نصف دجاجة)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Poulet complet</span>
-              <span class="item-price">35.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(دجاجة كاملة)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Miscle</span>
-              <span class="item-price">40.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(مشكل)</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section : Foukharet Al Koufiya -->
-      <section class="menu-category-section">
-        <div class="category-pill-wrapper">
-          <div class="category-pill-header category-pill-header--special">
-            <span class="pill-title-fr">Foukharet Al Koufiya</span>
-            <span class="pill-sep">•</span>
-            <span class="pill-title-ar" lang="ar" dir="rtl">فخارة الكوفية</span>
-          </div>
-        </div>
-
-        <div class="category-items-grid">
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Poulet</span>
-              <span class="item-price">20.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(دجاج)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Chawarma</span>
-              <span class="item-price">20.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(شاورما)</div>
-          </div>
-          <div class="menu-item-row">
-            <div class="item-main-line">
-              <span class="item-name-fr">Boeuf</span>
-              <span class="item-price">25.000 DT</span>
-            </div>
-            <div class="item-sub-line" lang="ar" dir="rtl">(لحم)</div>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <!-- Pied de Page de la Feuille -->
-    <footer class="sheet-footer">
-      <div class="footer-info-row">
-        <div class="footer-brand">RESTAURANT AL KOUFIA</div>
-        <div class="footer-brand-ar" lang="ar" dir="rtl">مطعم الكوفية • أشهى المأكولات</div>
-        <div class="footer-sub">Spécialités Tunisiennes Authentiques</div>
+    <!-- ============================================== -->
+    <!-- 2. LE LIVRE OUVERT (FOND CLAIR BEIGE PARCHEMIN) -->
+    <!-- ============================================== -->
+    <div class="book-opened-container" id="bookOpenedContainer">
+      
+      <!-- Barre d'outils avec bouton pour refermer le livre -->
+      <div class="book-top-bar">
+        <button type="button" class="btn-close-book" id="btnCloseBook">
+          <span>✕ Refermer le Livre</span>
+          <span lang="ar" dir="rtl">• إغلاق</span>
+        </button>
+        <span class="book-status-label">Restaurant Al Koufia • مطعم الكوفية</span>
       </div>
-      <div class="footer-accent-bar" aria-hidden="true"></div>
-    </footer>
+
+      <!-- Le Livre Ouvert (Double Page sur Desktop, Fond Clair Beige) -->
+      <div class="open-book-spread">
+
+        <!-- PAGE GAUCHE DU LIVRE -->
+        <div class="book-page book-page-left">
+          <div class="page-inner-border"></div>
+
+          <!-- En-tête intérieur du livre -->
+          <header class="open-book-header">
+            <div class="open-header-logo-row">
+              <div class="open-logo-circle">
+                <img src="logo.png" alt="Logo Restaurant Al Koufia" class="open-logo-img">
+              </div>
+              <div class="open-header-titles">
+                <h2 class="open-res-name">RESTAURANT AL KOUFIA</h2>
+                <div class="open-res-ar" lang="ar" dir="rtl">مطعم الكوفية</div>
+              </div>
+            </div>
+            <div class="open-header-tag">Menu & Spécialités Tunisiennes</div>
+          </header>
+
+          <div class="page-categories">
+
+            <!-- Catégorie : Entrées froides -->
+            <div class="menu-cat-block">
+              <div class="cat-book-header">
+                <span class="cat-book-title-fr">Entrées froides</span>
+                <span class="cat-book-title-ar" lang="ar" dir="rtl">المقبلات الباردة</span>
+              </div>
+              <div class="cat-items-list">
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Sauce à l'ail</span>
+                    <span class="dish-price-dt">4.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(ثومية)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Houmous</span>
+                    <span class="dish-price-dt">5.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(حمص)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Salade Fatouch</span>
+                    <span class="dish-price-dt">5.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(سلطة فتوش)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Salade Kol slou</span>
+                    <span class="dish-price-dt">5.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(سلطة كول سلو)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Moutabal d'aubergine</span>
+                    <span class="dish-price-dt">6.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(متبل باذنجان)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Baba Ghanouj</span>
+                    <span class="dish-price-dt">6.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(بابا غنوج)</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Catégorie : Entrées chaudes -->
+            <div class="menu-cat-block">
+              <div class="cat-book-header">
+                <span class="cat-book-title-fr">Entrées chaudes</span>
+                <span class="cat-book-title-ar" lang="ar" dir="rtl">المقبلات الساخنة</span>
+              </div>
+              <div class="cat-items-list">
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Falafel</span>
+                    <span class="dish-price-dt">1.500 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(فلافل)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Sambousek au fromage</span>
+                    <span class="dish-price-dt">2.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(سمبوسك جبنة)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Sambousek au bœuf</span>
+                    <span class="dish-price-dt">3.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(سمبوسك لحمة)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Soupe de lentilles</span>
+                    <span class="dish-price-dt">4.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(شوربة عدس)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Kebbe</span>
+                    <span class="dish-price-dt">4.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(كبة)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Arayes au fromage</span>
+                    <span class="dish-price-dt">8.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(عرايس جبنة)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Arayes au bœuf</span>
+                    <span class="dish-price-dt">10.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(عرايس لحمة)</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Catégorie : Sandwich -->
+            <div class="menu-cat-block">
+              <div class="cat-book-header">
+                <span class="cat-book-title-fr">Sandwich</span>
+                <span class="cat-book-title-ar" lang="ar" dir="rtl">سندويش</span>
+              </div>
+              <div class="cat-items-list">
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Omlette</span>
+                    <span class="dish-price-dt">4.500 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(أملات)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Falafel</span>
+                    <span class="dish-price-dt">5.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(فلافل)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Omlette peperoni</span>
+                    <span class="dish-price-dt">5.500 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(أملات باباروني)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Omlette jambon</span>
+                    <span class="dish-price-dt">6.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(أملات جمبون)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Omlette Thon</span>
+                    <span class="dish-price-dt">6.500 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(أملات تن)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Merguez</span>
+                    <span class="dish-price-dt">7.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(مرقاز)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Chawarma</span>
+                    <span class="dish-price-dt">9.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(شاورما)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Kabeb poulet</span>
+                    <span class="dish-price-dt">9.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(كباب دجاج)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Crespy</span>
+                    <span class="dish-price-dt">9.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(كرسبي)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Chich Taouk</span>
+                    <span class="dish-price-dt">9.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(شيش طاووق)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Viande hachée</span>
+                    <span class="dish-price-dt">11.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(كباب لحم)</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Catégorie : Makloub -->
+            <div class="menu-cat-block">
+              <div class="cat-book-header">
+                <span class="cat-book-title-fr">Makloub</span>
+                <span class="cat-book-title-ar" lang="ar" dir="rtl">مقلوب</span>
+              </div>
+              <div class="cat-items-list">
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Thon</span>
+                    <span class="dish-price-dt">10.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(تن)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Poulet grillé</span>
+                    <span class="dish-price-dt">12.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(دجاج مشوي)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Poulet pané</span>
+                    <span class="dish-price-dt">12.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(دجاج مبطن)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Crespy</span>
+                    <span class="dish-price-dt">12.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(كرسبي)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Viande hachée</span>
+                    <span class="dish-price-dt">13.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(لحم مفروم)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Kebda</span>
+                    <span class="dish-price-dt">15.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(كبدة)</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Catégorie : Baguette farcie -->
+            <div class="menu-cat-block">
+              <div class="cat-book-header">
+                <span class="cat-book-title-fr">Baguette farcie</span>
+                <span class="cat-book-title-ar" lang="ar" dir="rtl">باقات فارسي</span>
+              </div>
+              <div class="cat-items-list">
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Thon</span>
+                    <span class="dish-price-dt">10.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(تن)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Poulet grillé</span>
+                    <span class="dish-price-dt">12.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(دجاج مشوي)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Poulet pané</span>
+                    <span class="dish-price-dt">12.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(دجاج مبطن)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Viande hachée</span>
+                    <span class="dish-price-dt">13.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(لحم مفروم)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Kebda</span>
+                    <span class="dish-price-dt">15.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(كبدة)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAGE DROITE DU LIVRE -->
+        <div class="book-page book-page-right">
+          <div class="page-inner-border"></div>
+
+          <div class="page-categories">
+
+            <!-- Catégorie : Tacos -->
+            <div class="menu-cat-block">
+              <div class="cat-book-header">
+                <span class="cat-book-title-fr">Tacos</span>
+                <span class="cat-book-title-ar" lang="ar" dir="rtl">تاكوس</span>
+              </div>
+              <div class="cat-items-list">
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Thon</span>
+                    <span class="dish-price-dt">8.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(تن)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Poulet grillé</span>
+                    <span class="dish-price-dt">9.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(دجاج مشوي)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Poulet pané</span>
+                    <span class="dish-price-dt">9.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(دجاج مبطن)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Crespy</span>
+                    <span class="dish-price-dt">10.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(كرسبي)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Viande hachée</span>
+                    <span class="dish-price-dt">10.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(لحم مفروم)</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Catégorie : Burger -->
+            <div class="menu-cat-block">
+              <div class="cat-book-header">
+                <span class="cat-book-title-fr">Burger</span>
+                <span class="cat-book-title-ar" lang="ar" dir="rtl">برجر</span>
+              </div>
+              <div class="cat-items-list">
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Crespy</span>
+                    <span class="dish-price-dt">10.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(كرسبي)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Double Crespy</span>
+                    <span class="dish-price-dt">12.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(دوبل كرسبي)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Classique Bœuf</span>
+                    <span class="dish-price-dt">14.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(لحم مفروم)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Double bœuf</span>
+                    <span class="dish-price-dt">16.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(دوبل لحم)</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Catégorie : Karmacha Al Koufia -->
+            <div class="menu-cat-block">
+              <div class="cat-book-header">
+                <span class="cat-book-title-fr">Karmacha Al Koufia</span>
+                <span class="cat-book-title-ar" lang="ar" dir="rtl">مقرمشات الكوفية</span>
+              </div>
+              <div class="cat-items-list">
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Crispy 8 pièces</span>
+                    <span class="dish-price-dt">16.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(كرسبي 8 قطع)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Crispy 13 pièces</span>
+                    <span class="dish-price-dt">25.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(كرسبي 13 قطعة)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Crispy 20 pièces</span>
+                    <span class="dish-price-dt">35.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(كرسبي 20 قطعة)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Mixte Karmacha Al Koufia</span>
+                    <span class="dish-price-dt">45.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(تشكيلة المقرمشات الكوفية)</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Catégorie : Nos plats -->
+            <div class="menu-cat-block">
+              <div class="cat-book-header">
+                <span class="cat-book-title-fr">Nos plats</span>
+                <span class="cat-book-title-ar" lang="ar" dir="rtl">أطباقنا</span>
+              </div>
+              <div class="cat-items-list">
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Falafel</span>
+                    <span class="dish-price-dt">14.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(فلافل)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Fahita</span>
+                    <span class="dish-price-dt">17.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(فاهيتا)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Kebda</span>
+                    <span class="dish-price-dt">17.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(كبدة)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Cordon Bleu</span>
+                    <span class="dish-price-dt">18.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(كوردون بلو)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Poulet grillé</span>
+                    <span class="dish-price-dt">18.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(دجاج مشوي)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Poulet pané</span>
+                    <span class="dish-price-dt">18.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(دجاج مبطن)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Chawarma</span>
+                    <span class="dish-price-dt">20.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(شاورما)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Crespy</span>
+                    <span class="dish-price-dt">20.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(كرسبي)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Chich Taouk</span>
+                    <span class="dish-price-dt">20.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(شيش طاووق)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Msahab</span>
+                    <span class="dish-price-dt">22.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(مسحب)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Kabeb poulet</span>
+                    <span class="dish-price-dt">23.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(كباب دجاج)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Kabeb Boeuf</span>
+                    <span class="dish-price-dt">28.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(كباب لحم)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Maajoukat poulet</span>
+                    <span class="dish-price-dt">26.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(معجوقة دجاج)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Maajoukat boeuf</span>
+                    <span class="dish-price-dt">30.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(معجوقة لحم)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Demi poulet</span>
+                    <span class="dish-price-dt">23.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(نصف دجاجة)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Poulet complet</span>
+                    <span class="dish-price-dt">35.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(دجاجة كاملة)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Miscle</span>
+                    <span class="dish-price-dt">40.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(مشكل)</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Catégorie : Foukharet Al Koufiya -->
+            <div class="menu-cat-block">
+              <div class="cat-book-header">
+                <span class="cat-book-title-fr">Foukharet Al Koufiya</span>
+                <span class="cat-book-title-ar" lang="ar" dir="rtl">فخارة الكوفية</span>
+              </div>
+              <div class="cat-items-list">
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Poulet</span>
+                    <span class="dish-price-dt">20.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(دجاج)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Chawarma</span>
+                    <span class="dish-price-dt">20.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(شاورما)</div>
+                </div>
+                <div class="dish-row-book">
+                  <div class="dish-top-line">
+                    <span class="dish-name-fr">Boeuf</span>
+                    <span class="dish-price-dt">25.000 DT</span>
+                  </div>
+                  <div class="dish-sub-ar" lang="ar" dir="rtl">(لحم)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pied de page du livre ouvert -->
+          <footer class="open-book-footer">
+            <div>Restaurant Al Koufia • مطعم الكوفية</div>
+            <div style="font-size: 0.74rem; margin-top: 4px; opacity: 0.8;">Prix nets en Dinars Tunisiens (DT) • Spécialités Tunisiennes</div>
+          </footer>
+
+        </div>
+
+      </div>
+
+    </div>
 
   </div>
+
+  <!-- Script d'ouverture / fermeture du livre -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const bookContainer = document.getElementById('bookClosedContainer');
+      const closeBtn = document.getElementById('btnCloseBook');
+      const body = document.body;
+
+      function openBook() {
+        body.classList.remove('is-book-closed');
+        body.classList.add('is-book-open');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function closeBook() {
+        body.classList.remove('is-book-open');
+        body.classList.add('is-book-closed');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      bookContainer.addEventListener('click', openBook);
+      bookContainer.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openBook();
+        }
+      });
+
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeBook();
+      });
+    });
+  </script>
 
 </body>
 </html>
